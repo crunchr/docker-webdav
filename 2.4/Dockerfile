@@ -6,6 +6,7 @@ FROM httpd:2.4.37-alpine
 
 # Copy in our configuration files.
 COPY conf/ conf/
+COPY webdav-js/ /var/www/html/webdav-js/
 
 RUN set -ex; \
     # Create empty default DocumentRoot.
