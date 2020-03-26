@@ -50,6 +50,8 @@ RUN set -ex; \
     # Install openssl if we need to generate a self-signed certificate.
     apk add --no-cache openssl
 
+RUN apk add --no-cache acl
+
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 EXPOSE 80/tcp 443/tcp
 ENTRYPOINT [ "docker-entrypoint.sh" ]

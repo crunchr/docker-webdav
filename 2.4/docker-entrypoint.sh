@@ -103,4 +103,7 @@ fi
 [ ! -e "/var/lib/dav/DavLock" ] && touch "/var/lib/dav/DavLock"
 chown -R www-data:www-data "/var/lib/dav"
 
+setfacl -Rm default:u:www-data:rx /var/lib/dav
+setfacl -Rm u:www-data:rx /var/lib/dav
+
 exec "$@"
